@@ -2,6 +2,8 @@
 
 This is a script to bootstrap a new app with all the files needed to begin.
 
+## Files
+
 It will copy the files located in `/files` directly:
 
 * .babelrc
@@ -13,7 +15,14 @@ It will copy the files located in `/files` directly:
 * .travis.yml
 * jest.config.js
 
+## Templates
+
 It will populate placeholders for files within the `/templates` directory with data from `author.config.js` and the name of the project you will supply via the prompt when you run the script.
+
+* LICENSE.md
+* package.json
+* README.md
+* rollup.config.js
 
 ## Install
 
