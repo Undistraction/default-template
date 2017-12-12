@@ -29,6 +29,10 @@ Run from the command line from inside the root of a new project.
 default-template-init
 ```
 
-## Note
+## Notes
 
-The script will not overwrite anything. If it finds that a file already exists, it will quit with an error containing the filepath of the problematic file.
+* The script will not overwrite anything. If it finds that a file already exists, it will quit with an error containing the filepath of the problematic file.
+
+* The script uses `process.cwd()` as the target destination which will be whatever directory the script is called from.
+
+* Files inside the `/templates` dir can have tokens added in the form: `#{name}`. The script uses `author.config.js` to replace these tokens, and uses a flattened key path as the key value, so the key will be `author.github.username` and this should be used as the token name:
