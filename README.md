@@ -29,6 +29,16 @@ Run from the command line from inside the root of a new project.
 default-template-init
 ```
 
+## Customising
+
+If you want to use for your own projects:
+
+* fork.
+* rename the package.
+* add your own details to `author.config.js`.
+* edit or add files to `/files` and `/templates`.
+* 'npm publish'
+
 ## Notes
 
 * The script will not overwrite anything. If it finds that a file already exists, it will quit with an error containing the filepath of the problematic file.
