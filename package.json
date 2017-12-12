@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Script to setup files and templates for app",
   "main": "index.js",
+  "bin": {
+    "default-template-init": "scripts/init.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Undistraction/default-template.git"

@@ -16,5 +16,5 @@ module.exports = {
   TEMPLATE_DIR_PATH: path.join(parentDir, TEMPLATE_DIR),
   FILES_DIR_PATH: path.join(parentDir, FILES_DIR),
   TEMPLATE_DIR_TEMP_PATH: path.join(parentDir, TEMP_DIR),
-  OUT_DIR_PATH: path.join(parentDir, OUT_DIR),
+  OUT_DIR_PATH: process.cwd(),
 };
