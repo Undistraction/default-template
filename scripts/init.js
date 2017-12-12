@@ -192,8 +192,8 @@ function getUserConfig() {
 // -----------------------------------------------------------------------------
 // Entry
 // -----------------------------------------------------------------------------
-report.info(`CWD() ${process.cwd()}`);
 
+report.info(`Initialising new project at '${process.cwd()}'`);
 copyTemplatesToTemp()
   .then(getUserConfig)
   .then(populateTemplates)
