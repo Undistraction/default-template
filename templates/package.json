@@ -7,13 +7,7 @@
     "url": "git+#{project.repository.url}.git"
   },
   "files": ["dist", "src", "lib"],
-  "keywords": [
-    "styled-components",
-    "media-queries",
-    "css-in-js",
-    "css",
-    "breakpoints"
-  ],
+  "keywords": [],
   "author": "#{project.author.name}",
   "license": "MIT",
   "bugs": {
