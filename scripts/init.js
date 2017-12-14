@@ -50,7 +50,7 @@ const flattenObj = obj => {
   return fromPairs(go(obj));
 };
 
-const toNPMName = compose(toLower, replace(` `, `-`));
+const toNPMName = compose(toLower, replace(`/ /g`, `-`));
 
 const getCurrentYear = () => new Date().getFullYear();
 
