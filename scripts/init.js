@@ -28,7 +28,7 @@ const PROMPT_PROPS = [
   {
     name: `projectName`,
     message: `Enter the Project Name`,
-    validator: /^[a-zA-Z\s-]+$/,
+    validator: /^[a-zA-Z0-9\s-]+$/,
     required: true,
     warning: `Project Name must be only letters, spaces, or dashes`,
   },
