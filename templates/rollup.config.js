@@ -3,34 +3,34 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-  name: '#{project.dasherizedName}',
-  input: 'src/index.js',
+  name: `#{project.dasherizedName}`,
+  input: `src/index.js`,
   output: {
-    file: 'dist/#{project.dasherizedName}.js',
-    format: 'umd',
+    file: `dist/#{project.dasherizedName}.js`,
+    format: `umd`,
   },
   // Define modules that shouldn't be included in the build. It is assumed they
   // will be available via globals at runtime.
-  external: ['ramda'],
+  external: [`ramda`],
   // Define how external global modules should be referenced in the UMD bundle
-  globals: { ramda: 'R' },
+  globals: { ramda: `R` },
   plugins: [
     nodeResolve(),
     babel({
       babelrc: false,
-      exclude: 'node_modules/**',
+      exclude: `node_modules/**`,
       presets: [
         [
-          'env',
+          `env`,
           {
             modules: false,
           },
         ],
       ],
       plugins: [
-        'external-helpers',
-        'transform-es2015-destructuring',
-        'transform-object-rest-spread',
+        `external-helpers`,
+        `transform-es2015-destructuring`,
+        `transform-object-rest-spread`,
       ],
     }),
     // Allow CommonJS modules to be included in build.
