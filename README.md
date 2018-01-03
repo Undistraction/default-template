@@ -1,6 +1,6 @@
 # Default Template
 
-This is a script to bootstrap a new app with all the files needed to begin.
+This is a script to bootstrap a new lib with all the files needed to begin.
 
 ## Files
 
@@ -26,13 +26,13 @@ It will populate placeholders for files within the `/templates` directory with d
 
 ## Install
 
-Install globally with:
+Install the package globally with:
 
 ```
-yarn add @undistraction/default-template -g
+yarn global add @undistraction/default-template
 ```
 
-Run from the command line from inside the root of a new project.
+Run from the command line from inside the root directory of a new project.
 
 ```sh
 default-template-init
@@ -47,6 +47,8 @@ If you want to use for your own projects:
 * add your own details to `author.config.js`.
 * edit or add files to `/files` and `/templates`.
 * 'npm publish'
+* install as a global package
+* use `default-template-init` in the root of a project as outlined above.
 
 ## Notes
 
@@ -54,4 +56,4 @@ If you want to use for your own projects:
 
 * The script uses `process.cwd()` as the target destination which will be whatever directory the script is called from.
 
-* Files inside the `/templates` dir can have tokens added in the form: `#{name}`. The script uses `author.config.js` to replace these tokens, and uses a flattened key path as the key value, so the key will be `author.github.username` and this should be used as the token name:
+* Files inside the `/templates` dir can have tokens added in the form: `#{name}`. The script uses `author.config.js` to replace these tokens, and uses a flattened key path as the key value, so the key will be `author.github.username` and this should be used as the token name.
