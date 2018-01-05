@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+#{project.repository.url}.git"
   },
+  "files": ["dist", "src", "lib"],
   "keywords": [],
   "author": "#{project.author.name}",
   "license": "MIT",
