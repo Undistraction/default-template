@@ -1,6 +1,6 @@
 {
   "name": "@undistraction/default-template",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Script to setup files and templates for app",
   "main": "index.js",
   "bin": {
