@@ -15,7 +15,6 @@ const {
   compose,
   replace,
   toLower,
-  replace,
 } = require(`ramda`);
 const prompt = require(`prompt`);
 const stringifyObject = require(`stringify-object`);
