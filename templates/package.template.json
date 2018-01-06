@@ -8,7 +8,7 @@
   },
   "files": ["dist", "src", "lib"],
   "keywords": [],
-  "author": "#{project.author.name}",
+  "author": "#{author.name}",
   "license": "MIT",
   "bugs": {
     "url": "#{project.repository.url}/issues"
