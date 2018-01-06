@@ -24,6 +24,8 @@ It will populate placeholders for files within the `/templates` directory with d
 * README.md
 * rollup.config.js
 
+Note: NPM seems to have an issue with including a file called `package.json` and silently fails to copy it and any remaining files in the `templates/` dir. To work around this and for clarity, all files in the `templates/` should use a `.template.` extension before any of their own extensions. This extension will be removed when the files are copied over.
+
 ## Install
 
 Install the package globally with:
