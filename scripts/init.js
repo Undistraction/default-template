@@ -15,6 +15,7 @@ const {
   compose,
   replace,
   toLower,
+  replace,
 } = require(`ramda`);
 const prompt = require(`prompt`);
 const stringifyObject = require(`stringify-object`);
@@ -33,6 +34,8 @@ const PROMPT_PROPS = [
     warning: `Project Name must be only letters, spaces, or dashes`,
   },
 ];
+
+const TEMPLATE_REGEX = /template\./;
 
 // -----------------------------------------------------------------------------
 // Utility
@@ -54,16 +57,22 @@ const toNPMName = compose(toLower, replace(`/ /g`, `-`));
 
 const getCurrentYear = () => new Date().getFullYear();
 
+const removeTemplateExtension = replace(TEMPLATE_REGEX, '');
+
 const githubProjectURL = (username, projectName) =>
   join(`/`)([`https://github.com`, username, projectName]);
 
 const shouldIncludeFile = file => path.basename(file) !== `.DS_Store`;
 
 function copyFilesToDir(srcDir, destinationDir) {
+  // Get a list of files
   const items = fs.readdirSync(srcDir);
   const promises = map(item => {
     const srcFile = path.join(srcDir, item);
-    const destinationFile = path.join(destinationDir, item);
+    const destinationFile = path.join(
+      destinationDir,
+      removeTemplateExtension(item)
+    );
     report.info(` - Copying File: '${srcFile}' to '${destinationFile}'`);
     return fs.copy(srcFile, destinationFile, {
       overwrite: false,
