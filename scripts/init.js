@@ -173,6 +173,9 @@ function populateTemplates(promptConfig) {
           dasherizedProjectName
         ),
       },
+      author: {
+        name: config.author.name,
+      },
     },
     currentYear: getCurrentYear(),
   });

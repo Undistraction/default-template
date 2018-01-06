@@ -6,7 +6,4 @@ module.exports = {
       username: 'Undistraction',
     },
   },
-  project: {
-    name: 'XXXXX',
-  },
 };
