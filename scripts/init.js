@@ -56,7 +56,7 @@ const toNPMName = compose(toLower, replace(`/ /g`, `-`));
 
 const getCurrentYear = () => new Date().getFullYear();
 
-const removeTemplateExtension = replace(TEMPLATE_REGEX, '');
+const removeTemplateExtension = replace(TEMPLATE_REGEX, ``);
 
 const githubProjectURL = (username, projectName) =>
   join(`/`)([`https://github.com`, username, projectName]);
