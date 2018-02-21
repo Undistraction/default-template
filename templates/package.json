@@ -28,7 +28,9 @@
     "publish:minor": "npm version minor && sudo npm publish",
     "publish:major": "npm version major && sudo npm publish",
     "lint": "eslint src",
-    "audit:packages": "yarn outdated || true"
+    "audit:packages": "yarn outdated || true",
+    "test:cov": "open coverage/index.html",
+    "securityCheck": "nsp check"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -52,10 +54,12 @@
     "rollup": "^0.51.3",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.0"
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "nsp": "^3.2.1"
   },
   "dependencies": {
     "ramda": "^0.25.0",
-    "ramda-adjunct": "^2.1.0"
+    "ramda-adjunct": "^2.5.0",
+    "ramda-log": "0.0.3"
   }
 }
