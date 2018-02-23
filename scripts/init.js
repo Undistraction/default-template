@@ -64,9 +64,7 @@ const githubProjectURL = (username, projectName) =>
 const shouldIncludeFile = file => path.basename(file) !== `.DS_Store`;
 
 function copyFilesToDir(srcDir, destinationDir) {
-  // Get a list of files
   const items = fs.readdirSync(srcDir);
-
   report.info(`Copying Files: ${items}`);
   const promises = map(item => {
     const srcFile = path.join(srcDir, item);
@@ -89,9 +87,7 @@ function copyFilesToDir(srcDir, destinationDir) {
 // Copy Templates
 // -----------------------------------------------------------------------------
 
-const copyTemplatesToTemp = () => {
-  const items = fs.readdirSync(defaults.TEMPLATE_DIR_PATH);
-  report.info(`Templates: ${items}`);
+const copyTemplatesToTemp = () =>
   fs
     .copy(defaults.TEMPLATE_DIR_PATH, defaults.TEMPLATE_DIR_TEMP_PATH)
     .then(() => {
@@ -103,7 +99,6 @@ const copyTemplatesToTemp = () => {
     .catch(error =>
       Promise.reject(buildError(`Couldn't copy files to temp dir: ${error}`))
     );
-};
 
 // -----------------------------------------------------------------------------
 // Copy Files to Out Dir
