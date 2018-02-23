@@ -4,3 +4,5 @@ coverage
 out
 dist
 lib
+*.tgz
+package*
