@@ -89,7 +89,9 @@ function copyFilesToDir(srcDir, destinationDir) {
 // Copy Templates
 // -----------------------------------------------------------------------------
 
-const copyTemplatesToTemp = () =>
+const copyTemplatesToTemp = () => {
+  const items = fs.readdirSync(defaults.TEMPLATE_DIR_PATH);
+  report.info(`Templates: ${items}`);
   fs
     .copy(defaults.TEMPLATE_DIR_PATH, defaults.TEMPLATE_DIR_TEMP_PATH)
     .then(() => {
@@ -101,6 +103,7 @@ const copyTemplatesToTemp = () =>
     .catch(error =>
       Promise.reject(buildError(`Couldn't copy files to temp dir: ${error}`))
     );
+};
 
 // -----------------------------------------------------------------------------
 // Copy Files to Out Dir
@@ -118,7 +121,7 @@ const copyTemplatesToOutDir = () =>
       Promise.reject(buildError(`Couldn't copy files to temp dir: ${error}`))
     );
 
-const copyOtherFiles = () =>
+const copyOtherFilesToOutDir = () =>
   copyFilesToDir(defaults.FILES_DIR_PATH, defaults.OUT_DIR_PATH)
     .then(() => {
       report.info(`Copied other files to out dir: ${defaults.OUT_DIR_PATH}`);
@@ -211,6 +214,6 @@ copyTemplatesToTemp()
   .then(getUserConfig)
   .then(populateTemplates)
   .then(copyTemplatesToOutDir)
-  .then(copyOtherFiles)
+  .then(copyOtherFilesToOutDir)
   .then(cleanUp)
   .catch(error => report.error(`Error initialising: ${error}`));
