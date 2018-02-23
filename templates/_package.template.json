@@ -23,14 +23,15 @@
     "build:dist": "NODE_ENV=development rollup --config",
     "test": "jest --watch",
     "test:noWatch": "jest",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "verify",
     "publish:patch": "npm version patch && sudo npm publish",
     "publish:minor": "npm version minor && sudo npm publish",
     "publish:major": "npm version major && sudo npm publish",
     "lint": "eslint src",
     "audit:packages": "yarn outdated || true",
     "test:cov": "open coverage/index.html",
-    "securityCheck": "nsp check"
+    "securityCheck": "nsp check",
+    "verify": "npm run lint && npm run test:noWatch && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -55,11 +56,17 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "nsp": "^3.2.1"
+    "nsp": "^3.2.1",
+    "husky": "^0.15.0-rc.8"
   },
   "dependencies": {
     "ramda": "^0.25.0",
-    "ramda-adjunct": "^2.5.0",
-    "ramda-log": "0.0.3"
+    "ramda-adjunct": "^2.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run verify"
+    }
   }
 }
