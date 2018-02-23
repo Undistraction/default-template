@@ -62,3 +62,33 @@ If you want to use for your own projects:
 * The script uses `process.cwd()` as the target destination which will be whatever directory the script is called from.
 
 * Files inside the `/templates` dir can have tokens added in the form: `#{name}`. The script uses `author.config.js` to replace these tokens, and uses a flattened key path as the key value, so the key will be `author.github.username` and this should be used as the token name.
+
+## Maintainance
+
+### Preview
+
+To see what files NPM will include:
+
+```
+npm pack
+```
+
+This will create a tarball in the root dir.
+
+### Publish
+
+```
+yarn run publish:patch
+```
+
+or
+
+```
+yarn run publish:minor
+```
+
+or
+
+```
+yarn run publish:major
+```
