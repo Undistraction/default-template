@@ -66,6 +66,8 @@ const shouldIncludeFile = file => path.basename(file) !== `.DS_Store`;
 function copyFilesToDir(srcDir, destinationDir) {
   // Get a list of files
   const items = fs.readdirSync(srcDir);
+
+  report.info(`Copying Files: ${items}`);
   const promises = map(item => {
     const srcFile = path.join(srcDir, item);
     const destinationFile = path.join(
