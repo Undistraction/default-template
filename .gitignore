@@ -1,8 +1,9 @@
-node_modules
+node_modules/
 yarn-error.log
-coverage
-out
-dist
-lib
+coverage/
+out/
+dist/
+lib/
 *.tgz
-package*
+package*/
+tmp/
