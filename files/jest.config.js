@@ -7,4 +7,4 @@ module.exports = {
   coverageReporters: [`lcov`, `html`],
   setupFiles: [],
   modulePathIgnorePatterns: [`testHelpers/`],
-};
+}
